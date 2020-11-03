@@ -3,7 +3,7 @@
     <h1 class="align-middle">My Goals</h1>
         <div class="card-container">
           <div class="col-lg-4"  *ngFor='let goal of goals; let i =index'>
-            <div class="card" >
+            <div class="card" appStrikethrough>
               {{ goal.name }}
             </div>
             <button (click)='toggleDetails(i)'>Toggle Details</button>

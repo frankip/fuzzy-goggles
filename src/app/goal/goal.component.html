@@ -7,7 +7,7 @@
               {{ goal.name }}
             </div>
             <button (click)='toggleDetails(i)'>Toggle Details</button>
-            <app-goal-detail *ngIf='goal.showDescription' [goal]='goal'></app-goal-detail>
+            <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete)='completeGoal($event, i)'></app-goal-detail>
           </div>
           <p *ngIf='goals.length < 5'>Your goals are too many</p>
         </div>

@@ -1,12 +1,13 @@
 <!-- <p>goal works!</p> -->
 <div class="container">  
-    <h1 class="align-middle">My Goals</h1>
+    <h1 class="text-center">My Goals</h1>
         <div class="card-container">
+          <br>
           <div class="col-lg-4"  *ngFor='let goal of goals; let i =index'>
             <div class="card" appStrikethrough>
               {{ goal.name }}
             </div>
-            <button (click)='toggleDetails(i)'>Toggle Details</button>
+            <button class="btn btn-link btn-outline-success btn-sm" (click)='toggleDetails(i)'>Toggle Details</button>
             <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete)='deleteGoal($event, i)'></app-goal-detail>
           </div>
           <p *ngIf='goals.length < 5'>Your goals are too many</p>

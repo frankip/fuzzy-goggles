@@ -8,10 +8,16 @@
               {{ goal.name }}
             </div>
             <button class="btn btn-link btn-outline-success btn-sm" (click)='toggleDetails(i)'>Toggle Details</button>
-            <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete)='deleteGoal($event, i)'></app-goal-detail>
+            <div *ngIf='goal.showDescription'>
+              <app-goal-detail  [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
+            </div>
+            <!-- <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete)='deleteGoal($event, i)'></app-goal-detail> -->
           </div>
+          
           <p *ngIf='goals.length < 5'>Your goals are too many</p>
         </div>
-        
+        <div class="col-md-6">
+          <app-goal-form (addGoal) = "addNewGoal($event)"></app-goal-form>
+        </div>
   </div>
   
